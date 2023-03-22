@@ -1,0 +1,77 @@
+﻿{% extends 'base.html' %}
+
+{% block title %} {{ survey.title }} {% endblock %}
+
+{% block label %}
+
+
+
+{{question}} {% endblock %}
+
+{% if responseslength == 0 %}
+
+
+
+{% endif %}
+
+
+
+{% block option1 %}
+{% if responseslength == 2 %}
+
+{{ survey.questions[2].choices[0] }}
+
+{% else %}
+
+{{ survey.questions[0].choices[0] }}
+
+{% endif %}
+
+{% endblock %}
+
+{% block option1label %}
+{% if responseslength == 2 %}
+
+{{ survey.questions[2].choices[0] }}
+
+{% else %}
+
+{{ survey.questions[0].choices[0] }}
+
+{% endif %}
+{% endblock %}
+
+{% block option2 %}
+{% if responseslength == 2 %}
+
+{{ survey.questions[2].choices[1] }}
+
+{% else %}
+
+{{ survey.questions[0].choices[1] }}
+
+{% endif %}
+{% endblock %}
+
+{% block option2label %}
+{% if responseslength == 2 %}
+
+{{ survey.questions[2].choices[1] }}
+
+{% else %}
+
+{{ survey.questions[0].choices[1] }}
+
+{% endif %}
+{% endblock %}
+
+
+=
+
+
+
+
+
+{% if responses %}
+<h1> {{surveylength}}  and {{responseslength}} </h1>
+{% endif %}

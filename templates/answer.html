@@ -1,0 +1,30 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}<p>{{ survey.title }}</p> 
+{% endblock %}
+
+
+{% block label %}
+{% for msg in get_flashed_messages() %}
+<p>{{ msg }}</p>
+{% endfor %} {% endblock %}
+
+
+{% block content %}
+<hr />
+<p>
+    THANK U, U SUBMITTED ALL QUESTIONS!
+    {{ survey.title }} <br />
+    {{ survey.instructions }}<br />
+    {{ survey.questions[0].question }}<br />
+    {{ survey.questions[0].choices }}<br />
+    {{ survey.questions[0].choices[0] }}<br />
+    {{ survey.questions[1].question }}<br />
+    {{ survey.questions[1].choices }}<br />
+    {{ survey.questions[2].question }}<br />
+    {{ survey.questions[2].choices }}<br />
+    {{ survey.questions[3].question }}<br />
+    {{ survey.questions[3].choices }}<br />
+</p>
+
+{% endblock %}
